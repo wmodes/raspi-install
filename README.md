@@ -53,7 +53,7 @@ We'll be doing the basic configuration through the GUI. So install the SD card, 
 
 We'll use git and github to manage our development. This allows us to code on our favorite development machine/IDE/editor, push changes, and pull them down to the pi. 
 
-1. First we create an ssh key so we can clone from github.
+* First we create an ssh key so we can clone from github.
   1. Open up the pi terminal and run:
     `cd ~/.ssh && ssh-keygen`
   1. Show your public key with
