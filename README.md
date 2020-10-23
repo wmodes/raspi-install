@@ -53,7 +53,13 @@ We'll be doing the basic configuration through the GUI. So install the SD card, 
 
 We'll use git and github to manage our development. This allows us to code on our favorite development machine/IDE/editor, push changes, and pull them down to the pi. 
 
-First we create an ssh key so we can clone from github.
+Create your github.com repo for whatever development you plan to do.
+
+1. **+** (in upper right corner near profile) > New repository 
+1. Name it, add a README, .gitignore, etc 
+1. Create Repository
+
+On the pi's command line, create an ssh key so we can clone from github.
 
 1. Open up the pi terminal and run:
 
@@ -66,9 +72,18 @@ First we create an ssh key so we can clone from github.
 1. Select and copy
 1. On the github.com website, go to Profile (upper right) > Settings > SSH and GPG keys > New SSH Key, paste in your SSH public key
   
-Finally setup your .gitconfig.
+Finally, back at the command line, setup your .gitconfig.
 
-1. `git config --global user.name "bob"`
+1. `git config --global user.name "Wes Modes"`
 
-1. `git config --global user.email bob@...` (don't forget to restart your command line to make sure the config is reloaded)
+1. `git config --global user.email "wmodes@gmail.com"` (don't forget to restart your command line to make sure the config is reloaded)
 
+Now let's clone our new repo.
+
+1. From your repo on github.com, hit the Code Button and copy the SSH Clone link
+1. Back on the pi's command line
+
+    `mkdir ~/dev
+    cd ~/dev
+    git clone git@github.com:wmodes/chickenrobot.git` (pasting in your link, of course)
+    
