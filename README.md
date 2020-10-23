@@ -92,6 +92,6 @@ Now let's clone our new repo.
 
 Later after we do some coding on our fave development playform and push those changes to our upstream repo, we can pull them down on the pi with
 
-`git pull`
+    `git pull`
 
 
