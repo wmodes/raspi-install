@@ -58,13 +58,11 @@ First we create an ssh key so we can clone from github.
 1. Open up the pi terminal and run:
 
     `cd ~/.ssh && ssh-keygen`
-    
 1. Show your public key with
 
     `cat id_rsa.pub`
-    
 1. Select and copy
 1. On the github.com website, go to Profile (upper right) > Settings > SSH and GPG keys > New SSH Key, paste in your SSH public key
   
-  
+Next we 
 
