@@ -83,7 +83,9 @@ Now let's clone our new repo.
 1. From your repo on github.com, hit the Code Button and copy the SSH Clone link
 1. Back on the pi's command line
 
-    ```mkdir ~/dev`
+    ```
+    mkdir ~/dev`
     cd ~/dev
-    git clone git@github.com:wmodes/chickenrobot.git``` (pasting in your link, of course)
+    git clone git@github.com:wmodes/chickenrobot.git (pasting in your link, of course)
+    ```
     
