@@ -49,6 +49,18 @@ We'll be doing the basic configuration through the GUI. So install the SD card, 
 1. Under the Interface tab, Enable SSH and any other interfaces you need to enable
 1. Reboot as necessary
 
+## Git Configuration
 
+We'll use git and github to manage our development. This allows us to code on our favorite development machine/IDE/editor, push changes, and pull them down to the pi. 
 
+1. First we create an ssh key so we can clone from github.
+
+  1. Open up the pi terminal and run:
+    `cd ~/.ssh && ssh-keygen`
+  1. Show your public key with
+    `cat id_rsa.pub`
+  1. Select and copy
+  1. On the github.com website, go to Profile (upper right) > Settings > SSH and GPG keys > New SSH Key, paste in your SSH public key
+  
+  
 
