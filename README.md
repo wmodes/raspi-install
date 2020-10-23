@@ -87,5 +87,11 @@ Now let's clone our new repo.
     mkdir ~/dev`
     cd ~/dev
     git clone git@github.com:wmodes/chickenrobot.git (pasting in your link, of course)
+    cd chickenrobot
     ```
-    
+
+Later after we do some coding on our fave development playform and push those changes to our upstream repo, we can pull them down on the pi with
+
+`git pull`
+
+
