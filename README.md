@@ -23,8 +23,11 @@ In all these cases, the Pi was the obvious choice because of its incredible adap
 * standard Unix OS/Debian
 * ability to run python and its many useful modules
 * Chromium browser with leading edge JavaScript support
+* Wifi and Bluetooth
 * GPIO access to control hardware
 * selection of various inexpensive hats/peripheral boards
+* Capable processor
+* HDMI, ethernet, and USB connectors
 
 ## Imaging Card
 
