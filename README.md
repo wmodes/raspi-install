@@ -52,6 +52,12 @@ We'll be doing the basic configuration through the GUI. So install the SD card, 
 1. Under the Interface tab, Enable SSH and any other interfaces you need to enable
 1. Reboot as necessary
 
+Let's expand the filesystem to make sure that the OS has the full use of the SD Card.
+
+1. From the command line run `sudo raspi-config`
+1. Select the 7 Advanced Options > A1 Expand filesystem
+1. Arrow down to the <Finish> button, and then reboot
+
 ## Git Configuration
 
 We'll use git and github to manage our development. This allows us to code on our favorite development machine/IDE/editor, push changes, and pull them down to the pi. 
