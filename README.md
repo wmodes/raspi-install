@@ -57,6 +57,15 @@ Let's expand the filesystem to make sure that the OS has the full use of the SD 
 1. From the command line run `sudo raspi-config`
 1. Select the 7 Advanced Options > A1 Expand filesystem
 1. Arrow down to the <Finish> button, and then reboot
+    
+Let's reclaim some space:
+
+```
+$ sudo apt-get purge wolfram-engine
+$ sudo apt-get purge libreoffice*
+$ sudo apt-get clean
+$ sudo apt-get autoremove
+```
 
 ## Git Configuration
 
