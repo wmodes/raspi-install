@@ -52,6 +52,8 @@ We'll be doing the basic configuration through the GUI. So install the SD card, 
 1. Under the Interface tab, Enable SSH and any other interfaces you need to enable
 1. Reboot as necessary
 
+### Reclaiming Space
+
 Let's expand the filesystem to make sure that the OS has the full use of the SD Card.
 
 1. From the command line run `sudo raspi-config`
@@ -66,6 +68,21 @@ $ sudo apt-get purge libreoffice*
 $ sudo apt-get clean
 $ sudo apt-get autoremove
 ```
+### Turn off Remote Power Management
+
+On Raspberry Pi OS Stretch, remote power management is on by default. Why? It couases WiFi to occassionally drop. Let's turn it off.
+
+Use this command to read the current power saving mode of your Pi:
+
+`sudo iw wlan0 get power_save`
+
+And this one to turn power_save off:
+
+`sudo iw wlan0 set power_save off`
+
+To make this permanent add the following line to /etc/rc.local:
+
+`/sbin/iw dev wlan0 set power_save off`
 
 ## Git Configuration
 
