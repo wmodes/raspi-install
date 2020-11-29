@@ -82,7 +82,7 @@ And this one to turn power_save off:
 
 To make this permanent add the following line to /etc/rc.local:
 
-`sudo /sbin/iw dev wlan0 set power_save off`
+`/sbin/iw dev wlan0 set power_save off`
 
 ## Git Configuration
 
