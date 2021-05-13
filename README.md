@@ -54,16 +54,11 @@ We'll be doing the basic configuration through the GUI. So install the SD card, 
 
 ### Reclaiming Space
 
-Let's expand the filesystem to make sure that the OS has the full use of the SD Card.
-
-1. From the command line run `sudo raspi-config`
-1. Select the 7 Advanced Options > A1 Expand filesystem
-1. Arrow down to the <Finish> button, and then reboot
+We no longer have to make sure that the OS has the full use of the SD Card, as this is done when the system first boots and the options has been removed from the `raspi-config` menus.
     
-Let's reclaim some space:
+But we can still reclaim some space:
 
 ```
-$ sudo apt-get purge wolfram-engine
 $ sudo apt-get purge libreoffice*
 $ sudo apt-get clean
 $ sudo apt-get autoremove
@@ -130,4 +125,56 @@ Later after we do some coding on our fave development playform and push those ch
 
     `git pull`
 
+For convience, this is also a good time to make it easier to login to your pi. From your dev machine:
 
+    `% ssh-copy-id -i ~/.ssh/id_rsa pi@chickenrobot.local`
+
+This assumes you already have an ssh key generated on your machine, which is likely.
+
+## Configure Python 3
+
+By default the pi has Python 2 set as the default. This is irritating. Let's fix it.
+
+Let's find what versions we have:
+
+```
+$ python --version
+Python 2.7.16
+$ python3 --version
+Python 3.7.3
+```
+
+To change python version system-wide we can use update-alternatives command. Logged in as a root user (use `sudo su`), first list all available python alternatives:
+
+```
+# update-alternatives --list python
+update-alternatives: error: no alternatives for python
+```
+
+The above message means that no python alternatives have been recognized by update-alternatives command. For this reason we need to update our alternatives table and include both python2.7 and python3.7:
+
+```
+# update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+update-alternatives: using /usr/bin/python2.7 to provide /usr/bin/python (python) in auto mode
+# update-alternatives --install /usr/bin/python python /usr/bin/python3.7 2
+update-alternatives: using /usr/bin/python3.7 to provide /usr/bin/python (python) in auto mode
+```
+
+The --install option takes multiple arguments to create a symbolic link. The last argument specified priority, with a higher number being higher priority. Let's check the alternatives:
+
+```
+# update-alternatives --list python
+/usr/bin/python2.7
+/usr/bin/python3.7
+```
+
+Nice. And finally, let's check the default versions of python and pip:
+
+```
+# python --version
+Python 3.7.3
+# pip --version
+pip 18.1 from /usr/lib/python3/dist-packages/pip (python 3.7)
+```
+
+Woot.
